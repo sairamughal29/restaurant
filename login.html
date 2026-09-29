@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Flame &amp; Crust</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e11d2e'%3E%3Cpath d='M12 22c4.42 0 8-3.58 8-8 0-3.28-1.84-5.61-3.44-7.11C15.4 5.85 14 4.6 14 2c-2.5 1.5-4 3.5-4 6 0 1.5.5 2.5.5 2.5S9 9.5 8 7.5C6 9.5 4 12 4 14c0 4.42 3.58 8 8 8z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar"></header>
+
+  <main class="auth-wrap">
+    <div class="card auth-card">
+      <div class="auth-logo"><span class="logo-ic" style="width:52px;height:52px" id="auth-logo"></span></div>
+      <h1>Welcome <span class="red">Back</span></h1>
+      <p class="auth-sub">Login to your account to order faster and track deliveries.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="lg-email">Email Address</label>
+          <input type="email" id="lg-email" class="input" placeholder="you@example.com">
+          <span class="err-msg">Please enter a valid email</span>
+        </div>
+        <div class="field">
+          <label for="lg-pass">Password</label>
+          <input type="password" id="lg-pass" class="input" placeholder="••••••••">
+          <span class="err-msg">Password must be at least 6 characters</span>
+        </div>
+        <div class="remember-row">
+          <label><input type="checkbox" id="lg-remember" checked> Remember me</label>
+          <a href="#" onclick="toast('Password reset link sent to your email');return false;">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+      </form>
+
+      <div class="auth-foot">Don't have an account? <a href="register.html">Create Account</a></div>
+      <div class="auth-note">Demo: any email + 6-character password works. Staff? <a href="admin/login.html" class="red" style="font-weight:700">Admin Login</a></div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script>document.getElementById('auth-logo').innerHTML = ICONS.fire;</script>
+</body>
+</html>

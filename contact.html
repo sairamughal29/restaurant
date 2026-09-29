@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Flame &amp; Crust</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e11d2e'%3E%3Cpath d='M12 22c4.42 0 8-3.58 8-8 0-3.28-1.84-5.61-3.44-7.11C15.4 5.85 14 4.6 14 2c-2.5 1.5-4 3.5-4 6 0 1.5.5 2.5.5 2.5S9 9.5 8 7.5C6 9.5 4 12 4 14c0 4.42 3.58 8 8 8z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Get In Touch</span>
+        <h1>Contact <span class="red">Us</span></h1>
+        <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- form -->
+          <div class="card panel">
+            <h3>Send Us a Message</h3>
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="ct-name">Your Name <span class="req">*</span></label>
+                  <input type="text" id="ct-name" class="input" placeholder="Full name">
+                  <span class="err-msg">Please enter your name</span>
+                </div>
+                <div class="field">
+                  <label for="ct-phone">Phone <span class="req">*</span></label>
+                  <input type="tel" id="ct-phone" class="input" placeholder="+92 300 1234567">
+                  <span class="err-msg">Please enter a valid phone</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="ct-email">Email <span class="req">*</span></label>
+                <input type="email" id="ct-email" class="input" placeholder="you@example.com">
+                <span class="err-msg">Please enter a valid email</span>
+              </div>
+              <div class="field">
+                <label for="ct-msg">Message <span class="req">*</span></label>
+                <textarea id="ct-msg" class="input" rows="5" placeholder="How can we help you?"></textarea>
+                <span class="err-msg">Please write a message (min 10 characters)</span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" id="ct-send">Send Message</button>
+            </form>
+          </div>
+
+          <!-- info -->
+          <div style="display:flex;flex-direction:column;gap:18px" id="contact-info"></div>
+        </div>
+
+        <!-- map -->
+        <div class="map-panel mt-24" style="min-height:340px">
+          <span class="map-tag badge red">Find Us</span>
+          <div class="map-pin">
+            <div class="pin-drop">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="pin-label">Flame &amp; Crust — 24 Food Street, Gulberg III, Lahore</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

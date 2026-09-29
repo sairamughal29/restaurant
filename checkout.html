@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Flame &amp; Crust</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e11d2e'%3E%3Cpath d='M12 22c4.42 0 8-3.58 8-8 0-3.28-1.84-5.61-3.44-7.11C15.4 5.85 14 4.6 14 2c-2.5 1.5-4 3.5-4 6 0 1.5.5 2.5.5 2.5S9 9.5 8 7.5C6 9.5 4 12 4 14c0 4.42 3.58 8 8 8z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Final Step</span>
+        <h1>Secure <span class="red">Checkout</span></h1>
+        <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="cart.html">Cart</a> &nbsp;/&nbsp; Checkout</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="checkout-layout">
+          <form id="checkout-form" novalidate>
+            <div class="card panel mb-24">
+              <h3><span class="step-num">1</span> Customer Information</h3>
+              <div class="form-row">
+                <div class="field">
+                  <label for="co-name">Full Name <span class="req">*</span></label>
+                  <input type="text" id="co-name" class="input" placeholder="e.g. Ahmed Raza">
+                  <span class="err-msg">Please enter your full name</span>
+                </div>
+                <div class="field">
+                  <label for="co-phone">Phone Number <span class="req">*</span></label>
+                  <input type="tel" id="co-phone" class="input" placeholder="e.g. +92 300 1234567">
+                  <span class="err-msg">Please enter a valid phone number</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="co-email">Email <span class="req">*</span></label>
+                <input type="email" id="co-email" class="input" placeholder="you@example.com">
+                <span class="err-msg">Please enter a valid email address</span>
+              </div>
+            </div>
+
+            <div class="card panel mb-24">
+              <h3><span class="step-num">2</span> Delivery Information</h3>
+              <div class="field">
+                <label for="co-address">Delivery Address <span class="req">*</span></label>
+                <input type="text" id="co-address" class="input" placeholder="House / Street / Area">
+                <span class="err-msg">Please enter your delivery address</span>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="co-city">City / Area <span class="req">*</span></label>
+                  <input type="text" id="co-city" class="input" placeholder="e.g. Lahore">
+                  <span class="err-msg">Please enter your city or area</span>
+                </div>
+                <div class="field">
+                  <label for="co-areas">Delivery Zone</label>
+                  <select id="co-areas" class="input"></select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="co-note">Delivery Instructions <span class="muted">(optional)</span></label>
+                <textarea id="co-note" class="input" rows="2" placeholder="e.g. ring the bell, leave at reception..."></textarea>
+              </div>
+            </div>
+
+            <div class="card panel">
+              <h3><span class="step-num">3</span> Payment Method</h3>
+              <div class="pay-methods">
+                <label class="pay-method selected" id="pm-cod">
+                  <input type="radio" name="pay" value="COD" checked id="pay-cod">
+                  <div>
+                    <div class="pm-name">Cash on Delivery</div>
+                    <div class="pm-desc" id="pm-cod-desc">Pay in cash when your order arrives at your door</div>
+                  </div>
+                </label>
+                <label class="pay-method" style="opacity:.55;cursor:not-allowed" id="pm-card">
+                  <input type="radio" name="pay" value="Online" disabled id="pay-card">
+                  <div>
+                    <div class="pm-name">Credit / Debit Card</div>
+                    <div class="pm-desc" id="pm-card-desc">Secure online payment — coming soon</div>
+                  </div>
+                  <span class="soon" id="pm-card-soon">Soon</span>
+                </label>
+                <label class="pay-method" style="opacity:.55;cursor:not-allowed">
+                  <input type="radio" disabled>
+                  <div>
+                    <div class="pm-name">Online Wallet</div>
+                    <div class="pm-desc">Easypaisa / JazzCash — coming soon</div>
+                  </div>
+                  <span class="soon">Soon</span>
+                </label>
+              </div>
+            </div>
+          </form>
+
+          <div class="card panel summary-card" style="position:sticky;top:92px" id="co-summary"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

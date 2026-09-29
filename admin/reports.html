@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports — Flame &amp; Crust Admin</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e11d2e'%3E%3Cpath d='M12 22c4.42 0 8-3.58 8-8 0-3.28-1.84-5.61-3.44-7.11C15.4 5.85 14 4.6 14 2c-2.5 1.5-4 3.5-4 6 0 1.5.5 2.5.5 2.5S9 9.5 8 7.5C6 9.5 4 12 4 14c0 4.42 3.58 8 8 8z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="admin-shell" id="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="overlay" id="admin-overlay"></div>
+    <div class="admin-main">
+      <header class="topbar" id="topbar"></header>
+      <main class="content" id="content">
+        <div class="page-head">
+          <div><h2>Reports &amp; Analytics</h2><p>Computed live from real order data.</p></div>
+          <div class="page-actions">
+            <button class="btn btn-ghost" id="rep-csv">Export CSV</button>
+            <button class="btn btn-ghost" id="rep-pdf">Print / PDF</button>
+          </div>
+        </div>
+        <div class="toolbar" id="rep-range">
+          <button class="chip" data-r="today">Today</button>
+          <button class="chip" data-r="yesterday">Yesterday</button>
+          <button class="chip" data-r="7">Last 7 Days</button>
+          <button class="chip active" data-r="30">Last 30 Days</button>
+          <button class="chip" data-r="month">This Month</button>
+          <button class="chip" data-r="year">This Year</button>
+          <button class="chip" data-r="custom">Custom</button>
+          <span id="rep-custom" style="display:none;gap:8px;align-items:center">
+            <input class="input input-sm" type="date" id="rep-from"> <span style="color:var(--text-3)">→</span> <input class="input input-sm" type="date" id="rep-to">
+            <button class="btn btn-primary btn-sm" id="rep-apply">Apply</button>
+          </span>
+        </div>
+        <div class="stat-grid" id="rep-stats"></div>
+        <div class="dash-charts">
+          <div class="panel">
+            <div class="panel-head"><h3>Revenue <span class="sub" id="rep-sub"></span></h3></div>
+            <div class="panel-body"><canvas id="rep-revenue" style="width:100%"></canvas></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Payment Methods</h3></div>
+            <div class="panel-body"><canvas id="rep-pay" style="width:100%"></canvas></div>
+          </div>
+        </div>
+        <div class="dash-row">
+          <div class="panel">
+            <div class="panel-head"><h3>Orders Per Day</h3></div>
+            <div class="panel-body"><canvas id="rep-orders" style="width:100%"></canvas></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Most Ordered Foods</h3></div>
+            <div class="panel-body"><canvas id="rep-foods" style="width:100%"></canvas></div>
+          </div>
+        </div>
+        <div class="dash-row">
+          <div class="panel">
+            <div class="panel-head"><h3>Revenue by Category</h3></div>
+            <div class="panel-body"><canvas id="rep-cats" style="width:100%"></canvas></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Customer Growth <span class="sub">Cumulative registrations</span></h3></div>
+            <div class="panel-body"><canvas id="rep-customers" style="width:100%"></canvas></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Cancelled Orders <span class="sub" id="rep-cancel-sub"></span></h3></div>
+          <div class="panel-body flush table-wrap" id="rep-cancelled"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>
